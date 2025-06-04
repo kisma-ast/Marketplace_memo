@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ProductCard from './ProductCard';
 
@@ -129,7 +130,9 @@ const ProductGallery = () => {
               className="animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <ProductCard product={product} />
+              <Link to={`/product/${product.id}`}>
+                <ProductCard product={product} />
+              </Link>
             </div>
           ))}
         </div>

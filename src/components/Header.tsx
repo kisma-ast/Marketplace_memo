@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ShoppingCart, Search, User, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -11,28 +12,28 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">M</span>
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
               MarketPlace
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
+            <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
               Accueil
-            </a>
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
-              Produits
-            </a>
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
+            </Link>
+            <Link to="/categories" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
               Catégories
-            </a>
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
               À propos
+            </Link>
+            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
+              Contact
             </a>
           </nav>
 
@@ -74,17 +75,17 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
+              <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
                 Accueil
-              </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
-                Produits
-              </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
+              </Link>
+              <Link to="/categories" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
                 Catégories
-              </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
+              </Link>
+              <Link to="/about" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
                 À propos
+              </Link>
+              <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">
+                Contact
               </a>
               <div className="flex items-center bg-gray-100 rounded-full px-4 py-2">
                 <Search className="w-5 h-5 text-gray-400 mr-3" />
