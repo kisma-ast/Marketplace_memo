@@ -11,7 +11,7 @@ const HeroSection = () => {
       <ParallaxBackground />
       
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-amber-50 to-orange-200 opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-green-pale/30 via-green-light/10 to-green-medium/20 opacity-50" />
       
       {/* Éléments flottants 3D */}
       <FloatingElements />
@@ -20,14 +20,14 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-8 animate-fade-in">
-            <div className="inline-flex items-center bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">
+            <div className="inline-flex items-center bg-green-pale text-green-dark px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">
               <TrendingUp className="w-4 h-4 mr-2" />
               #1 Marketplace en France
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
               Découvrez des
-              <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent block hover:scale-105 transition-transform duration-500">
+              <span className="bg-gradient-to-r from-green-dark to-green-medium bg-clip-text text-transparent block hover:scale-105 transition-transform duration-500">
                 produits uniques
               </span>
             </h1>
@@ -48,7 +48,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105"
+                className="bg-gradient-to-r from-green-dark to-green-medium hover:from-green-dark/90 hover:to-green-medium/90 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105"
               >
                 Explorer maintenant
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -56,7 +56,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-orange-300 text-orange-700 hover:bg-orange-50 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300"
+                className="border-2 border-green-medium text-green-dark hover:bg-green-pale px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300"
               >
                 En savoir plus
               </Button>
@@ -65,7 +65,7 @@ const HeroSection = () => {
           
           {/* Hero Image avec effets 3D */}
           <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="relative bg-gradient-to-br from-orange-200 to-amber-200 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform-gpu perspective-1000">
+            <div className="relative bg-gradient-to-br from-green-pale to-green-light rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform-gpu perspective-1000">
               <img
                 src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=600&h=400&fit=crop"
                 alt="Produits de qualité"
@@ -76,7 +76,7 @@ const HeroSection = () => {
               <div className="absolute -top-4 -left-4 bg-white rounded-xl p-4 shadow-xl animate-float hover:scale-110 transition-transform duration-300" 
                    style={{ animationDelay: '0s' }}>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-green-medium rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium">Livraison rapide</span>
                 </div>
               </div>
@@ -84,7 +84,7 @@ const HeroSection = () => {
               <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl animate-float hover:scale-110 transition-transform duration-300" 
                    style={{ animationDelay: '0.5s' }}>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-green-light rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium">Qualité garantie</span>
                 </div>
               </div>

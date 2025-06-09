@@ -91,13 +91,13 @@ const ProductGallery = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+    <section className="py-20 bg-gradient-to-br from-background to-green-pale/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Nos Produits
-            <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent"> Phares</span>
+            <span className="bg-gradient-to-r from-green-dark to-green-medium bg-clip-text text-transparent"> Phares</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Découvrez notre sélection exclusive de produits soigneusement choisis pour leur qualité exceptionnelle
@@ -113,8 +113,8 @@ const ProductGallery = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`px-6 py-3 font-medium transition-all duration-300 ${
                 activeCategory === category.id
-                  ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg hover:shadow-xl'
-                  : 'border-orange-200 text-orange-700 hover:bg-orange-50 hover:border-orange-300'
+                  ? 'bg-gradient-to-r from-green-dark to-green-medium text-white shadow-lg hover:shadow-xl'
+                  : 'border-green-light text-green-dark hover:bg-green-pale hover:border-green-medium'
               }`}
             >
               {category.name}
@@ -144,7 +144,7 @@ const ProductGallery = () => {
               onClick={handleLoadMore}
               size="lg"
               variant="outline"
-              className="px-8 py-4 text-lg font-semibold border-2 border-orange-300 text-orange-700 hover:bg-orange-50 hover:border-orange-400 transition-all duration-300"
+              className="px-8 py-4 text-lg font-semibold border-2 border-green-light text-green-dark hover:bg-green-pale hover:border-green-medium transition-all duration-300"
             >
               Voir plus de produits
             </Button>

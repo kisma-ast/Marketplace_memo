@@ -62,7 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom green palette
+				'green-dark': 'hsl(var(--green-dark))',
+				'green-medium': 'hsl(var(--green-medium))',
+				'green-light': 'hsl(var(--green-light))',
+				'green-pale': 'hsl(var(--green-pale))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -117,10 +122,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(251, 146, 60, 0.5)'
+						boxShadow: '0 0 5px hsl(var(--green-medium) / 0.5)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(251, 146, 60, 0.8), 0 0 30px rgba(251, 146, 60, 0.6)'
+						boxShadow: '0 0 20px hsl(var(--green-medium) / 0.8), 0 0 30px hsl(var(--green-medium) / 0.6)'
 					}
 				}
 			},
