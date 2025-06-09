@@ -45,10 +45,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
         {product.badge && (
           <div className="absolute top-4 left-4 z-10">
             <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-              product.badge === 'Bestseller' ? 'bg-green-500 text-white' :
-              product.badge === 'Nouveauté' ? 'bg-blue-500 text-white' :
+              product.badge === 'Bestseller' ? 'bg-green-medium text-white' :
+              product.badge === 'Nouveauté' ? 'bg-green-light text-green-dark' :
               product.badge === 'Promo' ? 'bg-red-500 text-white' :
-              'bg-purple-500 text-white'
+              'bg-green-dark text-white'
             }`}>
               {product.badge}
             </span>
@@ -58,7 +58,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         {/* Discount Badge */}
         {discount > 0 && (
           <div className="absolute top-4 right-4 z-10">
-            <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+            <span className="bg-green-medium text-white px-2 py-1 rounded-full text-xs font-bold">
               -{discount}%
             </span>
           </div>
@@ -110,13 +110,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
 
         {/* Product Name */}
-        <h3 className="font-bold text-lg text-gray-900 line-clamp-2 hover:text-orange-600 transition-colors">
+        <h3 className="font-bold text-lg text-gray-900 line-clamp-2 hover:text-green-medium transition-colors">
           {product.name}
         </h3>
 
         {/* Price */}
         <div className="flex items-center space-x-2">
-          <span className="text-2xl font-bold text-orange-600">
+          <span className="text-2xl font-bold text-green-medium">
             {product.price.toFixed(2)}€
           </span>
           {product.originalPrice && (
@@ -128,7 +128,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
         {/* Add to Cart Button */}
         <Button 
-          className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+          className="w-full bg-gradient-to-r from-green-dark to-green-medium hover:from-green-dark/90 hover:to-green-medium/90 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
         >
           <ShoppingCart className="w-4 h-4 mr-2 group-hover:animate-bounce" />
           Ajouter au panier

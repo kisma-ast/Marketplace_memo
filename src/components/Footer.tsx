@@ -9,10 +9,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-dark to-green-medium rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">M</span>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-green-light to-green-medium bg-clip-text text-transparent">
                 MarketPlace
               </span>
             </div>
@@ -21,16 +21,16 @@ const Footer = () => {
               Découvrez l'excellence à chaque achat.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-green-light transition-colors duration-200">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-green-light transition-colors duration-200">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-green-light transition-colors duration-200">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-green-light transition-colors duration-200">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -40,19 +40,19 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-xl font-semibold text-white">Liens rapides</h3>
             <div className="space-y-3">
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 À propos de nous
               </a>
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 Nos produits
               </a>
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 Blog
               </a>
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 Carrières
               </a>
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 Partenaires
               </a>
             </div>
@@ -62,19 +62,19 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-xl font-semibold text-white">Support</h3>
             <div className="space-y-3">
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 Centre d'aide
               </a>
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 Contact
               </a>
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 Retours & Échanges
               </a>
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 Livraison
               </a>
-              <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors duration-200">
+              <a href="#" className="block text-gray-400 hover:text-green-light transition-colors duration-200">
                 FAQ
               </a>
             </div>
@@ -85,15 +85,15 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-white">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-orange-400" />
+                <Mail className="w-5 h-5 text-green-light" />
                 <span className="text-gray-400">contact@marketplace.fr</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-orange-400" />
+                <Phone className="w-5 h-5 text-green-light" />
                 <span className="text-gray-400">+33 1 23 45 67 89</span>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-orange-400 mt-1" />
+                <MapPin className="w-5 h-5 text-green-light mt-1" />
                 <span className="text-gray-400">
                   123 Rue de la Innovation<br />
                   75001 Paris, France
@@ -114,9 +114,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Votre email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500"
+                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-green-medium"
               />
-              <button className="px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold rounded-lg transition-all duration-300">
+              <button className="px-6 py-3 bg-gradient-to-r from-green-dark to-green-medium hover:from-green-dark/90 hover:to-green-medium/90 text-white font-semibold rounded-lg transition-all duration-300">
                 S'inscrire
               </button>
             </div>
@@ -130,13 +130,13 @@ const Footer = () => {
               © 2024 MarketPlace. Tous droits réservés.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200 text-sm">
+              <a href="#" className="text-gray-400 hover:text-green-light transition-colors duration-200 text-sm">
                 Conditions d'utilisation
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200 text-sm">
+              <a href="#" className="text-gray-400 hover:text-green-light transition-colors duration-200 text-sm">
                 Politique de confidentialité
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200 text-sm">
+              <a href="#" className="text-gray-400 hover:text-green-light transition-colors duration-200 text-sm">
                 Cookies
               </a>
             </div>
