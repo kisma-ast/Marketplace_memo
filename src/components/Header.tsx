@@ -49,15 +49,19 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hover:bg-orange-100">
-              <User className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:bg-orange-100 relative">
-              <ShoppingCart className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                3
-              </span>
-            </Button>
+            <Link to="/account">
+              <Button variant="ghost" size="icon" className="hover:bg-orange-100">
+                <User className="w-5 h-5" />
+              </Button>
+            </Link>
+            <Link to="/cart">
+              <Button variant="ghost" size="icon" className="hover:bg-orange-100 relative">
+                <ShoppingCart className="w-5 h-5" />
+                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  3
+                </span>
+              </Button>
+            </Link>
             
             {/* Mobile menu button */}
             <Button
