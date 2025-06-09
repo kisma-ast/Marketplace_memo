@@ -177,7 +177,7 @@ const ProductRecommendationBot = () => {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
+          className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-green-dark to-green-medium hover:from-green-dark/90 hover:to-green-medium/90 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
         >
           <MessageCircle className="w-6 h-6 text-white" />
         </Button>
@@ -185,9 +185,9 @@ const ProductRecommendationBot = () => {
 
       {/* Interface du chat */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-96 h-[500px] bg-white rounded-2xl shadow-2xl border border-orange-100 flex flex-col overflow-hidden animate-fade-in">
+        <div className="fixed bottom-6 right-6 z-50 w-96 h-[500px] bg-white rounded-2xl shadow-2xl border border-green-pale flex flex-col overflow-hidden animate-fade-in">
           {/* Header */}
-          <div className="bg-gradient-to-r from-orange-500 to-amber-500 p-4 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-green-dark to-green-medium p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                 <Bot className="w-5 h-5 text-white" />
@@ -217,7 +217,7 @@ const ProductRecommendationBot = () => {
                 <div className={`flex items-start space-x-2 max-w-[80%] ${message.type === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
                     message.type === 'user' 
-                      ? 'bg-orange-500' 
+                      ? 'bg-green-medium' 
                       : 'bg-gray-200'
                   }`}>
                     {message.type === 'user' ? (
@@ -229,7 +229,7 @@ const ProductRecommendationBot = () => {
                   <div>
                     <div className={`rounded-2xl p-3 ${
                       message.type === 'user'
-                        ? 'bg-orange-500 text-white'
+                        ? 'bg-green-medium text-white'
                         : 'bg-gray-100 text-gray-800'
                     }`}>
                       {message.content}
@@ -254,7 +254,7 @@ const ProductRecommendationBot = () => {
                                 <h4 className="text-sm font-medium text-gray-900 truncate">
                                   {product.name}
                                 </h4>
-                                <p className="text-sm text-orange-600 font-semibold">
+                                <p className="text-sm text-green-dark font-semibold">
                                   {product.price}€
                                 </p>
                               </div>
@@ -310,7 +310,7 @@ const ProductRecommendationBot = () => {
               <Button
                 onClick={handleSendMessage}
                 disabled={isTyping || !inputValue.trim()}
-                className="bg-orange-500 hover:bg-orange-600"
+                className="bg-green-medium hover:bg-green-dark"
               >
                 <Send className="w-4 h-4" />
               </Button>
@@ -321,7 +321,7 @@ const ProductRecommendationBot = () => {
                 variant="ghost"
                 size="sm"
                 onClick={restartConversation}
-                className="w-full mt-2 text-orange-600 hover:text-orange-700 hover:bg-orange-50"
+                className="w-full mt-2 text-green-dark hover:text-green-medium hover:bg-green-pale"
               >
                 Nouvelle conversation
               </Button>

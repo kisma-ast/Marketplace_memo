@@ -63,7 +63,7 @@ const Account = () => {
     switch (status) {
       case 'Livré': return 'bg-green-100 text-green-800';
       case 'En transit': return 'bg-blue-100 text-blue-800';
-      case 'Traitement': return 'bg-orange-100 text-orange-800';
+      case 'Traitement': return 'bg-amber-100 text-amber-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
@@ -81,7 +81,7 @@ const Account = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-pale via-background to-green-light/20">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
@@ -94,7 +94,7 @@ const Account = () => {
                   <div className="relative inline-block">
                     <Avatar className="w-20 h-20">
                       <AvatarImage src="/placeholder.svg" />
-                      <AvatarFallback className="bg-gradient-to-br from-orange-400 to-amber-400 text-white text-xl">
+                      <AvatarFallback className="bg-gradient-to-br from-green-medium to-green-light text-white text-xl">
                         {userInfo.name.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>
@@ -117,8 +117,8 @@ const Account = () => {
                       onClick={() => setActiveTab(item.id)}
                       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
                         activeTab === item.id
-                          ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white'
-                          : 'text-gray-700 hover:bg-orange-50'
+                          ? 'bg-gradient-to-r from-green-dark to-green-medium text-white'
+                          : 'text-gray-700 hover:bg-green-pale'
                       }`}
                     >
                       <item.icon className="w-5 h-5" />
@@ -218,7 +218,7 @@ const Account = () => {
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-gray-600">{order.items} article(s)</span>
-                          <span className="text-xl font-bold text-orange-600">
+                          <span className="text-xl font-bold text-green-dark">
                             {order.total.toFixed(2)} €
                           </span>
                         </div>
@@ -244,8 +244,8 @@ const Account = () => {
                           className="w-full h-32 object-cover rounded-lg mb-3"
                         />
                         <h3 className="font-semibold">{item.name}</h3>
-                        <p className="text-orange-600 font-bold text-lg">{item.price} €</p>
-                        <Button className="w-full mt-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600">
+                        <p className="text-green-dark font-bold text-lg">{item.price} €</p>
+                        <Button className="w-full mt-3 bg-gradient-to-r from-green-dark to-green-medium hover:from-green-dark/90 hover:to-green-medium/90">
                           Ajouter au panier
                         </Button>
                       </div>

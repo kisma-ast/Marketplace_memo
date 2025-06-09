@@ -103,7 +103,7 @@ const Categories = () => {
     : products.filter(product => product.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-pale via-background to-green-light/20">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
@@ -111,7 +111,7 @@ const Categories = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Nos
-            <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent"> Catégories</span>
+            <span className="bg-gradient-to-r from-green-dark to-green-medium bg-clip-text text-transparent"> Catégories</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Découvrez notre large sélection de produits organisés par catégories
@@ -155,7 +155,7 @@ const Categories = () => {
                 placeholder="Rechercher des produits..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-medium focus:border-transparent"
               />
             </div>
 
@@ -164,7 +164,7 @@ const Categories = () => {
               <Button
                 variant={selectedCategory === 'all' ? 'default' : 'outline'}
                 onClick={() => setSelectedCategory('all')}
-                className={selectedCategory === 'all' ? 'bg-orange-500 hover:bg-orange-600' : ''}
+                className={selectedCategory === 'all' ? 'bg-green-medium hover:bg-green-dark' : ''}
               >
                 Tous
               </Button>
@@ -173,7 +173,7 @@ const Categories = () => {
                   key={category.id}
                   variant={selectedCategory === category.id ? 'default' : 'outline'}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={selectedCategory === category.id ? 'bg-orange-500 hover:bg-orange-600' : ''}
+                  className={selectedCategory === category.id ? 'bg-green-medium hover:bg-green-dark' : ''}
                 >
                   {category.name}
                 </Button>

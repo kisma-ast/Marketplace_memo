@@ -67,7 +67,7 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+      <div className="min-h-screen bg-gradient-to-br from-green-pale via-background to-green-light/20">
         <Header />
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
@@ -75,7 +75,7 @@ const Cart = () => {
             <h1 className="text-3xl font-bold text-gray-800 mb-4">Votre panier est vide</h1>
             <p className="text-gray-600 mb-8">Découvrez nos produits et ajoutez-les à votre panier</p>
             <Link to="/">
-              <Button className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600">
+              <Button className="bg-gradient-to-r from-green-dark to-green-medium hover:from-green-dark/90 hover:to-green-medium/90">
                 Continuer vos achats
               </Button>
             </Link>
@@ -87,12 +87,12 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-pale via-background to-green-light/20">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center gap-4 mb-8">
-          <Link to="/" className="text-orange-600 hover:text-orange-700">
+          <Link to="/" className="text-green-dark hover:text-green-medium">
             <ArrowLeft className="w-6 h-6" />
           </Link>
           <h1 className="text-3xl font-bold text-gray-800">Mon Panier ({cartItems.length})</h1>
@@ -139,7 +139,7 @@ const Cart = () => {
                           </Button>
                         </div>
                         <div className="flex items-center gap-4">
-                          <span className="text-xl font-bold text-orange-600">
+                          <span className="text-xl font-bold text-green-dark">
                             {(item.price * item.quantity).toFixed(2)} €
                           </span>
                           <Button
@@ -177,16 +177,16 @@ const Cart = () => {
                   <hr />
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
-                    <span className="text-orange-600">{finalTotal.toFixed(2)} €</span>
+                    <span className="text-green-dark">{finalTotal.toFixed(2)} €</span>
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold py-3">
+                <Button className="w-full bg-gradient-to-r from-green-dark to-green-medium hover:from-green-dark/90 hover:to-green-medium/90 text-white font-semibold py-3">
                   Procéder au paiement
                 </Button>
 
                 <div className="mt-4 text-center">
-                  <Link to="/" className="text-orange-600 hover:text-orange-700 text-sm">
+                  <Link to="/" className="text-green-dark hover:text-green-medium text-sm">
                     Continuer vos achats
                   </Link>
                 </div>
