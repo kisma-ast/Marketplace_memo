@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -255,7 +254,7 @@ const ProductRecommendationBot = () => {
                                   {product.name}
                                 </h4>
                                 <p className="text-sm text-green-dark font-semibold">
-                                  {product.price}€
+                                  {(product.price * 655.957).toFixed(0)} FCFA
                                 </p>
                               </div>
                               <ShoppingCart className="w-4 h-4 text-gray-400" />

@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Star, TrendingUp } from 'lucide-react';
 import FloatingElements from './FloatingElements';
@@ -22,7 +21,7 @@ const HeroSection = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="inline-flex items-center bg-green-pale text-green-dark px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">
               <TrendingUp className="w-4 h-4 mr-2" />
-              #1 Marketplace en France
+              #1 Marketplace au Sénégal
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { User, Package, Heart, Settings, LogOut, Edit2, Camera } from 'lucide-react';
 import Header from '../components/Header';
@@ -17,7 +16,7 @@ const Account = () => {
     name: 'Marie Dupont',
     email: 'marie.dupont@email.com',
     phone: '+33 6 12 34 56 78',
-    address: '123 Rue de la Paix, 75001 Paris, France'
+    address: '123 Rue de la Paix, Dakar, Sénégal'
   });
 
   const orders = [
@@ -219,7 +218,7 @@ const Account = () => {
                         <div className="flex justify-between items-center">
                           <span className="text-gray-600">{order.items} article(s)</span>
                           <span className="text-xl font-bold text-green-dark">
-                            {order.total.toFixed(2)} €
+                            {(order.total * 655.957).toFixed(0)} FCFA
                           </span>
                         </div>
                       </div>
@@ -244,7 +243,7 @@ const Account = () => {
                           className="w-full h-32 object-cover rounded-lg mb-3"
                         />
                         <h3 className="font-semibold">{item.name}</h3>
-                        <p className="text-green-dark font-bold text-lg">{item.price} €</p>
+                        <p className="text-green-dark font-bold text-lg">{(item.price * 655.957).toFixed(0)} FCFA</p>
                         <Button className="w-full mt-3 bg-gradient-to-r from-green-dark to-green-medium hover:from-green-dark/90 hover:to-green-medium/90">
                           Ajouter au panier
                         </Button>

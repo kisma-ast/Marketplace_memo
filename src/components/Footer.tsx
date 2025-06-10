@@ -1,4 +1,3 @@
-
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -96,7 +95,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-green-light mt-1" />
                 <span className="text-gray-400">
                   123 Rue de la Innovation<br />
-                  75001 Paris, France
+                  Dakar, Sénégal
                 </span>
               </div>
             </div>

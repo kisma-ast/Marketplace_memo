@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, Heart, Star, Eye } from 'lucide-react';
@@ -117,11 +116,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
         {/* Price */}
         <div className="flex items-center space-x-2">
           <span className="text-2xl font-bold text-green-medium">
-            {product.price.toFixed(2)}€
+            {(product.price * 655.957).toFixed(0)} FCFA
           </span>
           {product.originalPrice && (
             <span className="text-lg text-gray-500 line-through">
-              {product.originalPrice.toFixed(2)}€
+              {(product.originalPrice * 655.957).toFixed(0)} FCFA
             </span>
           )}
         </div>

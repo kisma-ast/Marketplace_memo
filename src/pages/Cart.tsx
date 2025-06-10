@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Minus, Plus, Trash2, ArrowLeft, ShoppingBag } from 'lucide-react';
@@ -140,7 +139,7 @@ const Cart = () => {
                         </div>
                         <div className="flex items-center gap-4">
                           <span className="text-xl font-bold text-green-dark">
-                            {(item.price * item.quantity).toFixed(2)} €
+                            {(item.price * item.quantity * 655.957).toFixed(0)} FCFA
                           </span>
                           <Button
                             variant="ghost"
@@ -168,16 +167,16 @@ const Cart = () => {
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Sous-total</span>
-                    <span className="font-semibold">{total.toFixed(2)} €</span>
+                    <span className="font-semibold">{(total * 655.957).toFixed(0)} FCFA</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Livraison</span>
-                    <span className="font-semibold">{shipping.toFixed(2)} €</span>
+                    <span className="font-semibold">{(shipping * 655.957).toFixed(0)} FCFA</span>
                   </div>
                   <hr />
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
-                    <span className="text-green-dark">{finalTotal.toFixed(2)} €</span>
+                    <span className="text-green-dark">{(finalTotal * 655.957).toFixed(0)} FCFA</span>
                   </div>
                 </div>
 
