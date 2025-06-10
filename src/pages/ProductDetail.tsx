@@ -82,8 +82,11 @@ const ProductDetail = () => {
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
                     key={star}
-                    className={`w-5 h-5 ${star <= product.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
-                      }`}
+                    className={`w-5 h-5 ${
+                      star <= product.rating
+                        ? 'fill-green-medium text-green-medium'
+                        : 'text-gray-300'
+                    }`}
                   />
                 ))}
               </div>

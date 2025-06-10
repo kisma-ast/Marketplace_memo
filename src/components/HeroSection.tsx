@@ -6,15 +6,22 @@ import ParallaxBackground from './ParallaxBackground';
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden py-20 lg:py-32">
-      {/* Arrière-plan parallax */}
-      <ParallaxBackground />
-      
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-pale/30 via-green-light/10 to-green-medium/20 opacity-50" />
-      
-      {/* Éléments flottants 3D */}
-      <FloatingElements />
-      
+      {/* Video background */}
+      <div className="absolute inset-0 w-full h-full -z-10 pointer-events-none">
+        <iframe
+          src="https://www.youtube.com/embed/f36QRp24F5c?autoplay=1&mute=1&controls=0&loop=1&playlist=f36QRp24F5c&modestbranding=1&showinfo=0&rel=0"
+          title="YouTube video background"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          className="w-full h-full object-cover"
+          style={{ filter: 'brightness(0.7)' }}
+        />
+      </div>
+      {/* Désactivation temporaire des backgrounds décoratifs */}
+      {/* <ParallaxBackground /> */}
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-green-pale/30 via-green-light/10 to-green-medium/20 opacity-50" /> */}
+      {/* <FloatingElements /> */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
@@ -38,7 +45,7 @@ const HeroSection = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-500 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="w-5 h-5 fill-yellow-400 text-yellow-400 hover:scale-110 transition-transform duration-200" />
+                  <Star key={star} className="w-5 h-5 fill-green-medium text-green-medium hover:scale-110 transition-transform duration-200" />
                 ))}
               </div>
               <span className="font-medium">4.9/5 • Plus de 50,000 avis clients</span>
@@ -63,34 +70,37 @@ const HeroSection = () => {
           </div>
           
           {/* Hero Image avec effets 3D */}
-          <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="relative bg-gradient-to-br from-green-pale to-green-light rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform-gpu perspective-1000">
-              <img
-                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=600&h=400&fit=crop"
-                alt="Produits de qualité"
-                className="w-full h-80 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500"
+          <div className="relative bg-gradient-to-br from-green-pale to-green-light rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform-gpu perspective-1000">
+            <div className="w-full h-80 rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/f36QRp24F5c?autoplay=1&mute=1&controls=0&loop=1&playlist=f36QRp24F5c&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3"
+                title="YouTube video"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="w-full h-full object-cover"
               />
-              
-              {/* Floating cards avec animations 3D */}
-              <div className="absolute -top-4 -left-4 bg-white rounded-xl p-4 shadow-xl animate-float hover:scale-110 transition-transform duration-300" 
-                   style={{ animationDelay: '0s' }}>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-medium rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium">Livraison rapide</span>
-                </div>
-              </div>
-              
-              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl animate-float hover:scale-110 transition-transform duration-300" 
-                   style={{ animationDelay: '0.5s' }}>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-light rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium">Qualité garantie</span>
-                </div>
-              </div>
-              
-              {/* Effet de brillance au survol */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 hover:opacity-20 transition-opacity duration-500 rounded-2xl transform -skew-x-12 translate-x-full hover:translate-x-[-100%] transition-transform duration-1000"></div>
             </div>
+            
+            {/* Floating cards avec animations 3D */}
+            <div className="absolute -top-4 -left-4 bg-white rounded-xl p-4 shadow-xl animate-float hover:scale-110 transition-transform duration-300" 
+                 style={{ animationDelay: '0s' }}>
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-green-medium rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium">Livraison rapide</span>
+              </div>
+            </div>
+            
+            <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl animate-float hover:scale-110 transition-transform duration-300" 
+                 style={{ animationDelay: '0.5s' }}>
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-green-light rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium">Qualité garantie</span>
+              </div>
+            </div>
+            
+            {/* Effet de brillance au survol */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 hover:opacity-20 transition-opacity duration-500 rounded-2xl transform -skew-x-12 translate-x-full hover:translate-x-[-100%] transition-transform duration-1000"></div>
           </div>
         </div>
       </div>

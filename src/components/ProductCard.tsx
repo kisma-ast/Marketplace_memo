@@ -97,8 +97,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 <Star
                   key={star}
                   className={`w-4 h-4 ${
-                    star <= Math.floor(product.rating) 
-                      ? 'fill-yellow-400 text-yellow-400' 
+                    star <= Math.floor(product.rating)
+                      ? 'fill-green-medium text-green-medium'
                       : 'text-gray-300'
                   }`}
                 />

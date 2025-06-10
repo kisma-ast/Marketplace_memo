@@ -1,9 +1,11 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Search, Filter, Grid, List } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { useSearch } from '@/contexts/SearchContext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
@@ -50,175 +52,165 @@ const categories = [
 const products = [
   {
     id: 1,
-    name: 'Casque Audio Premium',
-    price: 299.99,
-    originalPrice: 399.99,
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop',
-    category: 'electronics',
-    rating: 4.8,
-    reviews: 124,
-    badge: 'Bestseller'
+    name: 'Smartphone Samsung Galaxy S21',
+    price: 450000,
+    originalPrice: 500000,
+    rating: 4.5,
+    image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500&h=500&fit=crop',
+    category: 'Électronique'
   },
   {
     id: 2,
-    name: 'Ensemble Salon Moderne',
-    price: 1299.99,
-    originalPrice: 1599.99,
-    image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop',
-    category: 'home',
-    rating: 4.9,
-    reviews: 89,
-    badge: 'Nouveauté'
+    name: 'Laptop HP Pavilion',
+    price: 650000,
+    originalPrice: 700000,
+    rating: 4.2,
+    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=500&fit=crop',
+    category: 'Électronique'
   },
   {
     id: 3,
-    name: 'Smartphone Dernière Génération',
-    price: 899.99,
-    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop',
-    category: 'electronics',
-    rating: 4.9,
-    reviews: 245,
-    badge: 'Nouveauté'
+    name: 'T-shirt Premium',
+    price: 25000,
+    originalPrice: 30000,
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop',
+    category: 'Mode'
   },
   {
     id: 4,
-    name: 'Veste en Cuir Premium',
-    price: 249.99,
-    originalPrice: 349.99,
-    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=300&fit=crop',
-    category: 'fashion',
-    rating: 4.8,
-    reviews: 167,
-    badge: 'Tendance'
+    name: 'Chaussures de Sport',
+    price: 45000,
+    originalPrice: 50000,
+    rating: 4.3,
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop',
+    category: 'Mode'
+  },
+  {
+    id: 5,
+    name: 'Montre Connectée',
+    price: 85000,
+    originalPrice: 90000,
+    rating: 4.6,
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop',
+    category: 'Accessoires'
+  },
+  {
+    id: 6,
+    name: 'Sac à Main Designer',
+    price: 75000,
+    originalPrice: 80000,
+    rating: 4.4,
+    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&h=500&fit=crop',
+    category: 'Accessoires'
   }
 ];
 
 const Categories = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [searchParams] = useSearchParams();
+  const { searchTerm, setSearchTerm } = useSearch();
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const filteredProducts = selectedCategory === 'all' 
-    ? products 
-    : products.filter(product => product.category === selectedCategory);
+  useEffect(() => {
+    const searchQuery = searchParams.get('search');
+    if (searchQuery) {
+      setSearchTerm(searchQuery);
+    }
+  }, [searchParams, setSearchTerm]);
+
+  const filteredProducts = products.filter(product => {
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         product.category.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const categories = ['all', ...new Set(products.map(product => product.category))];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-pale via-background to-green-light/20">
+    <div className="min-h-screen bg-gradient-to-br from-green-pale via-white to-green-pale/50">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
-        {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Nos
-            <span className="bg-gradient-to-r from-green-dark to-green-medium bg-clip-text text-transparent"> Catégories</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Découvrez notre large sélection de produits organisés par catégories
-          </p>
-        </div>
-
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {categories.map((category) => (
-            <Card 
-              key={category.id} 
-              className="group cursor-pointer hover:shadow-xl transition-all duration-300 overflow-hidden"
-              onClick={() => setSelectedCategory(category.id)}
-            >
-              <div className="relative">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
-                    <p className="text-sm">{category.productCount} produits</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-
-        {/* Filters & Search */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
-          <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Filters & Search */}
+          <div className="w-full md:w-64 space-y-6">
             {/* Search */}
-            <div className="relative flex-1 max-w-md">
+            <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
+              <Input
+                className="pl-10"
                 placeholder="Rechercher des produits..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-medium focus:border-transparent"
               />
             </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              <Button
-                variant={selectedCategory === 'all' ? 'default' : 'outline'}
-                onClick={() => setSelectedCategory('all')}
-                className={selectedCategory === 'all' ? 'bg-green-medium hover:bg-green-dark' : ''}
-              >
-                Tous
-              </Button>
-              {categories.slice(0, 4).map((category) => (
+            {/* Categories */}
+            <div>
+              <h3 className="font-semibold text-lg mb-3">Catégories</h3>
+              <div className="space-y-2">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "ghost"}
+                    className={`w-full justify-start ${
+                      selectedCategory === category
+                        ? 'bg-green-medium text-white'
+                        : 'hover:bg-green-pale'
+                    }`}
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Products Grid/List */}
+          <div className="flex-1">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">
+                {filteredProducts.length} produits trouvés
+              </h2>
+              <div className="flex items-center space-x-2">
                 <Button
-                  key={category.id}
-                  variant={selectedCategory === category.id ? 'default' : 'outline'}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={selectedCategory === category.id ? 'bg-green-medium hover:bg-green-dark' : ''}
+                  variant={viewMode === 'grid' ? 'default' : 'ghost'}
+                  size="icon"
+                  onClick={() => setViewMode('grid')}
+                  className={viewMode === 'grid' ? 'bg-green-medium text-white' : ''}
                 >
-                  {category.name}
+                  <Grid className="w-5 h-5" />
                 </Button>
-              ))}
+                <Button
+                  variant={viewMode === 'list' ? 'default' : 'ghost'}
+                  size="icon"
+                  onClick={() => setViewMode('list')}
+                  className={viewMode === 'list' ? 'bg-green-medium text-white' : ''}
+                >
+                  <List className="w-5 h-5" />
+                </Button>
+              </div>
             </div>
 
-            {/* View Mode */}
-            <div className="flex items-center space-x-2">
-              <Button
-                variant={viewMode === 'grid' ? 'default' : 'outline'}
-                size="icon"
-                onClick={() => setViewMode('grid')}
-              >
-                <Grid className="w-4 h-4" />
-              </Button>
-              <Button
-                variant={viewMode === 'list' ? 'default' : 'outline'}
-                size="icon"
-                onClick={() => setViewMode('list')}
-              >
-                <List className="w-4 h-4" />
-              </Button>
-            </div>
+            {filteredProducts.length > 0 ? (
+              <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}>
+                {filteredProducts.map((product) => (
+                  <Link key={product.id} to={`/product/${product.id}`}>
+                    <ProductCard product={product} viewMode={viewMode} />
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Aucun produit trouvé</h3>
+                <p className="text-gray-600">Essayez de modifier vos critères de recherche</p>
+              </div>
+            )}
           </div>
         </div>
-
-        {/* Products */}
-        <div className={`grid gap-6 ${
-          viewMode === 'grid' 
-            ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
-            : 'grid-cols-1'
-        }`}>
-          {filteredProducts.map((product) => (
-            <Link key={product.id} to={`/product/${product.id}`}>
-              <ProductCard product={product} />
-            </Link>
-          ))}
-        </div>
-
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Aucun produit trouvé</h3>
-            <p className="text-gray-600">Essayez de modifier vos critères de recherche</p>
-          </div>
-        )}
       </div>
 
       <Footer />

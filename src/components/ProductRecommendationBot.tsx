@@ -22,7 +22,7 @@ interface Product {
 }
 
 const botQuestions = [
-  "Bonjour ! Je suis votre assistant shopping personnel. Quel type de produit recherchez-vous aujourd'hui ?",
+  "Bonjour ! Je suis votre assistant shopping personnel \"Kagnie\". Quel type de produit recherchez-vous aujourd'hui ?",
   "Quel est votre budget approximatif pour cet achat ?",
   "Préférez-vous des produits plutôt tendance ou classiques ?",
   "Y a-t-il une marque ou une caractéristique particulière qui vous intéresse ?"
@@ -57,7 +57,14 @@ const sampleProducts: Product[] = [
 
 const ProductRecommendationBot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: '1',
+      content: "Bonjour ! Je suis votre assistant shopping personnel \"Kagnie\". Quel type de produit recherchez-vous aujourd'hui ?",
+      type: "bot",
+      timestamp: new Date(),
+    },
+  ]);
   const [inputValue, setInputValue] = useState('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
