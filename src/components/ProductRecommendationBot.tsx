@@ -22,7 +22,7 @@ interface Product {
 }
 
 const botQuestions = [
-  "Bonjour ! Je suis votre assistant shopping personnel \"Kagnie\". Quel type de produit recherchez-vous aujourd'hui ?",
+  "Bonjour ! Je suis votre assistant shopping personnel \"Fatou\". Quel type de produit recherchez-vous aujourd'hui ?",
   "Quel est votre budget approximatif pour cet achat ?",
   "Préférez-vous des produits plutôt tendance ou classiques ?",
   "Y a-t-il une marque ou une caractéristique particulière qui vous intéresse ?"
@@ -60,7 +60,7 @@ const ProductRecommendationBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: "Bonjour ! Je suis votre assistant shopping personnel \"Kagnie\". Quel type de produit recherchez-vous aujourd'hui ?",
+      content: "Bonjour ! Je suis votre assistant shopping personnel \"Fatou\". Quel type de produit recherchez-vous aujourd'hui ?",
       type: "bot",
       timestamp: new Date(),
     },
@@ -199,7 +199,7 @@ const ProductRecommendationBot = () => {
                 <Bot className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-white font-semibold">Assistant Shopping</h3>
+                <h3 className="text-white font-semibold">Assistant Shopping Fatou</h3>
                 <p className="text-white/80 text-sm">En ligne</p>
               </div>
             </div>
